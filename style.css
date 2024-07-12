@@ -1,3 +1,38 @@
+section {
+    padding: 2rem;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section h3, section h4 {
+    margin-top: 1.5rem;
+    color: #333;
+}
+
+section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    position: static;
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 1rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 1rem 0;
+    }
+}
 .accordion {
     max-width: 800px;
     margin: 0 auto;

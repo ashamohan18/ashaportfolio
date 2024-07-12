@@ -7,3 +7,16 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
+
+document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const accordionItem = button.parentElement;
+
+        if (accordionItem.classList.contains('active')) {
+            accordionItem.classList.remove('active');
+        } else {
+            document.querySelectorAll('.accordion-item').forEach(item => item.classList.remove('active'));
+            accordionItem.classList.add('active');
+        }
+    });
+});
