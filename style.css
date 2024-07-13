@@ -174,3 +174,31 @@ p {
     font-size: 1rem;
     color: #666;
 }
+.projects-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.project-tile {
+    min-width: 300px;
+    flex: 0 0 auto;
+}
+
+.project-tile .card {
+    border: 1px solid #e9ecef;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-tile .card:hover {
+    transform: scale(1.05);
+}
+
+.project-tile img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
