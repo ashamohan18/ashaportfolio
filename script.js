@@ -20,3 +20,8 @@ document.querySelectorAll('.accordion-button').forEach(button => {
         }
     });
 });
+
+$(document).ready(function () {
+    $('.collapse').collapse('hide');
+    $('#collapseSkills').collapse('show');
+});
