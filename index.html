@@ -62,6 +62,26 @@
             line-height: 1.6;
         }
 
+        .about-content {
+            position: relative;
+            z-index: 1; /* Ensure the content is in front of the particles */
+        }
+
+        .about-section {
+            position: relative;
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Ensure particles are behind the content */
+        }
+
     </style>
     <script>
         function sendMail() {
@@ -72,6 +92,7 @@
             window.location.href = "mailto:your-email@example.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
 
@@ -94,12 +115,122 @@
     </nav>
 
     <!-- About Me Section -->
-    <section id="about" class="about-section text-center">
+    <!-- About Me Section -->
+    <section id="about" class="about-section text-center position-relative">
+        <div id="particles-js"></div>
         <div class="container">
             <h2>About Me</h2>
             <p>Accomplished Senior Manager with over 21 years of extensive experience in global talent systems and services across India, Europe, and the US. Adept at leading testing initiatives for HR information systems changes, driving stakeholder engagement, and mentoring teams for growth. Holds a Master's degree in Data Science, combining technical expertise with strategic leadership to drive organizational success and innovation.</p>
         </div>
     </section>
+<script>
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 100,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: '#a0a0a0'
+    },
+    shape: {
+      type: 'circle',
+      stroke: {
+        width: 0,
+        color: '#a0a0a0'
+      },
+      polygon: {
+        nb_sides: 5
+      }
+    },
+    opacity: {
+      value: 0.9,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false
+      }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 40,
+        size_min: 0.1,
+        sync: false
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: '#a0a0a0',
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 3,
+      direction: 'none',
+      random: false,
+      straight: false,
+      out_mode: 'out',
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200
+      }
+    }
+  },
+  interactivity: {
+    detect_on: 'canvas',
+    events: {
+      onhover: {
+        enable: true,
+        mode: 'repulse'
+      },
+      onclick: {
+        enable: true,
+        mode: 'push'
+      },
+      resize: true
+    },
+    modes: {
+      grab: {
+        distance: 400,
+        line_linked: {
+          opacity: 1
+        }
+      },
+      bubble: {
+        distance: 400,
+        size: 40,
+        duration: 2,
+        opacity: 8,
+        speed: 3
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      },
+      remove: {
+        particles_nb: 2
+      }
+    }
+  },
+  retina_detect: true
+});
+</script>
+
 
     <!-- Work Experience Section -->
     <section id="work" class="work-section text-center">
@@ -232,7 +363,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card" data-toggle="modal" data-target="#modalProject1">
-                        <img src="images/Linear Dendogram - Sentiment.jpeg" class="card-img-top" alt="Project 1">
+                        <img src="images/projects/Linear Dendogram - Sentiment.jpeg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Sentiment Analysis</h5>
                         </div>
