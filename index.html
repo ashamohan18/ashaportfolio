@@ -15,8 +15,9 @@
         .footer { background: #a0a0a0; padding: 40px 0; }
         /* Styles for uniform card sizes */
         .card {
-            border: 1px solid #ccc; /* Thin grey outline */
+            border: 0px solid #ccc; /* Thin grey outline */
             transition: transform 0.1s, box-shadow 0.1s; /* Smooth transition for the hover effect */
+            background-color: transparent;
         }
 
         .card:hover {
@@ -28,6 +29,7 @@
             height: 200px;
             width: 100%;
             object-fit: center; /* Maintain aspect ratio while covering the entire area */
+            background-color: transparent;
         }
 
         .card .card-body {
@@ -40,7 +42,7 @@
             height: 150px; /* Set a fixed height for the images */
             width: 100%; /* Ensure the image takes the full width of the card */
             object-fit: contain; /* Maintain aspect ratio and fit within the bounds */
-            border-bottom: 1px solid #ccc; /* Optional: add a border at the bottom of the image */
+            border-bottom: 0px solid #ccc; /* Optional: add a border at the bottom of the image */
         }
         .modal-body img {
             margin-bottom: 15px;
@@ -121,7 +123,7 @@
                       </div>
                       <div class="col-md-3">
                           <div class="card" data-toggle="modal" data-target="#modalPublicisSapient">
-                              <img src="images/companies/Pubsapient.jpg" class="card-img-top" alt="Company Logo 2">
+                              <img src="images/companies/ps.png" class="card-img-top" alt="Company Logo 2">
                               <div class="card-body">
                                   <h5 class="card-title">Publicis Sapient</h5>
                                   <p class="card-text">Role and description...</p>
@@ -139,7 +141,7 @@
                       </div>
                       <div class="col-md-3">
                           <div class="card" data-toggle="modal" data-target="#modalHP">
-                              <img src="images/companies/Hewlett-Packard-Logo-2008-2014.jpg" class="card-img-top" alt="Company Logo 4">
+                              <img src="images/companies/hpnobg.png" class="card-img-top" alt="Company Logo 4">
                               <div class="card-body">
                                   <h5 class="card-title">Hewlett Packard</h5>
                                   <p class="card-text">Role and description...</p>
@@ -427,7 +429,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/Education/Birkbeck.jpg" class="card-img-top" alt="Education 1">
+                        <img src="images/Education/bbk.png" class="card-img-top" alt="Education 1">
                         <div class="card-body">
                             <h5 class="card-title">Masters in Data Science</h5>
                             <p class="card-text">2020</p>
@@ -436,7 +438,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/Education/said white.jpg" class="card-img-top" alt="Education 2">
+                        <img src="images/Education/said.png" class="card-img-top" alt="Education 2">
                         <div class="card-body">
                             <h5 class="card-title">Management Programme</h5>
                             <p class="card-text">2012</p>
@@ -463,7 +465,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/certification/Prince2.png" class="card-img-top" alt="Certification 1">
+                        <img src="images/certification/Prince2nobg.png" class="card-img-top" alt="Certification 1">
                         <div class="card-body">
                             <h5 class="card-title">Prince 2 Practitioner</h5>
                             <p class="card-text">2015</p>
@@ -481,9 +483,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="images/certification/iso.jpg" class="card-img-top" alt="Certification 3">
+                        <img src="images/certification/ISO.png" class="card-img-top" alt="Certification 3">
                         <div class="card-body">
-                            <h5 class="card-title">ISO 9001:2000</h5>
+                            <h5 class="card-title">ISO 9001:2000 Lead Auditor</h5>
                             <p class="card-text">2006</p>
                         </div>
                     </div>
