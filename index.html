@@ -1,179 +1,527 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags and other head elements -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hariharan Ramamoorthy's Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
+    <title>Hari Ramamoorthy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for different sections */
+        .about-section { background: #f0f0f0; padding: 60px 0; }
+        .work-section { background: #e0e0e0; padding: 60px 0; }
+        .education-section { background: #d0d0d0; padding: 60px 0; }
+        .certifications-section { background: #c0c0c0; padding: 60px 0; }
+        .portfolio-section { background: #b0b0b0; padding: 60px 0; }
+        .footer { background: #a0a0a0; padding: 40px 0; }
+        /* Styles for uniform card sizes */
+        .card {
+            border: 1px solid #ccc; /* Thin grey outline */
+            transition: transform 0.1s, box-shadow 0.1s; /* Smooth transition for the hover effect */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge the card on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow on hover */
+        }
+
+        .card img {
+            height: 200px;
+            width: 100%;
+            object-fit: center; /* Maintain aspect ratio while covering the entire area */
+        }
+
+        .card .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .card-img-top {
+            height: 150px; /* Set a fixed height for the images */
+            width: 100%; /* Ensure the image takes the full width of the card */
+            object-fit: contain; /* Maintain aspect ratio and fit within the bounds */
+            border-bottom: 1px solid #ccc; /* Optional: add a border at the bottom of the image */
+        }
+        .modal-body img {
+            margin-bottom: 15px;
+        }
+        .blog-section {
+            background: #f9f9f9;
+            padding: 60px 0;
+        }
+
+        .blog-post h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+    </style>
+    <script>
+        function sendMail() {
+            var email = document.getElementById('contactFormEmail').value;
+            var message = document.getElementById('contactFormMessage').value;
+            var subject = "Portfolio Contact Form Submission";
+            var body = "Email: " + email + "\n\nMessage:\n" + message;
+            window.location.href = "mailto:your-email@example.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
+    </script>
 </head>
 <body>
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
 
-</body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hari Ramamoorthy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#work">Work Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
             </ul>
-        </nav>
-    </header>
-    
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
+        </div>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section text-center">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Accomplished Senior Manager with over 21 years of extensive experience in global talent systems and services across India, Europe, and the US. Adept at leading testing initiatives for HR information systems changes, driving stakeholder engagement, and mentoring teams for growth. Holds a Master's degree in Data Science, combining technical expertise with strategic leadership to drive organizational success and innovation.</p>
+        </div>
     </section>
-    
- <section id="about" class="container mt-5">
-    <h2 class="mb-4">About Me</h2>
-    <p>Accomplished Senior Manager with over 20 years of extensive experience in global talent systems and services across India, Europe, and the US. Adept at leading testing initiatives for HR information systems changes, driving stakeholder engagement, and mentoring teams for growth. Holds a Master's degree in Data Science, combining technical expertise with strategic leadership to drive organizational success and innovation.</p>
 
-    <div class="accordion" id="cvAccordion">
-        <div class="card">
-            <div class="card-header" id="headingSkills">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSkills" aria-expanded="true" aria-controls="collapseSkills">
-                        Skills
-                    </button>
-                </h2>
-            </div>
+    <!-- Work Experience Section -->
+    <section id="work" class="work-section text-center">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <!-- Tiles for work experience -->
+    <!-- Work Experience Section -->
+          <section id="work" class="work-section text-center">
+              <div class="container">
 
-            <div id="collapseSkills" class="collapse show" aria-labelledby="headingSkills" data-parent="#cvAccordion">
-                <div class="card-body">
-                    <ul>
-                        <li>Data Science and Analytics - Python, Power BI, SQL</li>
-                        <li>Human Resources Information Systems</li>
-                        <li>Applicant Tracking Systems (Smart Recruiters, ICIMS), Onboarding and Core HR (SAP SuccessFactors, Taleo, Oracle), Payroll (ADP), Employee Lifecycle Management</li>
-                        <li>Process Improvements Methodologies - Lean, Six Sigma, MS Visio</li>
-                        <li>Test Management – SharePoint, JIRA</li>
-                        <li>Test Automation - Tricentis Tosca</li>
-                        <li>Software Development Lifecycle - Waterfall, Agile</li>
-                        <li>Project Management and PMO - MS Project Plan, JIRA</li>
-                        <li>Stakeholder Management</li>
-                    </ul>
-                </div>
+                  <!-- Tiles for work experience -->
+                  <div class="row">
+                      <div class="col-md-3">
+                          <div class="card" data-toggle="modal" data-target="#modalResources">
+                              <img src="images/companies/Resources.png" class="card-img-top" alt="Company Logo 1">
+                              <div class="card-body">
+                                  <h5 class="card-title">Resources</h5>
+                                  <p class="card-text">Role and description...</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="card" data-toggle="modal" data-target="#modalPublicisSapient">
+                              <img src="images/companies/Pubsapient.jpg" class="card-img-top" alt="Company Logo 2">
+                              <div class="card-body">
+                                  <h5 class="card-title">Publicis Sapient</h5>
+                                  <p class="card-text">Role and description...</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="card" data-toggle="modal" data-target="#modalCognizant">
+                              <img src="images/companies/Cognizant.png" class="card-img-top" alt="Company Logo 3">
+                              <div class="card-body">
+                                  <h5 class="card-title">Cognizant</h5>
+                                  <p class="card-text">Role and description...</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="card" data-toggle="modal" data-target="#modalHP">
+                              <img src="images/companies/Hewlett-Packard-Logo-2008-2014.jpg" class="card-img-top" alt="Company Logo 4">
+                              <div class="card-body">
+                                  <h5 class="card-title">Hewlett Packard</h5>
+                                  <p class="card-text">Role and description...</p>
+                              </div>
+                          </div>
+                      </div> <!-- Repeat for more work experiences -->
+                  </div>
+              </div>
+          </section>
+
+          <!-- Modal for Resources -->
+          <div class="modal fade" id="modalResources" tabindex="-1" role="dialog" aria-labelledby="modalResourcesLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="modalResourcesLabel">Resources</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Details about your role and experience at Resources...</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Modal for Publicis Sapient -->
+          <div class="modal fade" id="modalPublicisSapient" tabindex="-1" role="dialog" aria-labelledby="modalPublicisSapientLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="modalPublicisSapientLabel">Publicis Sapient</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Details about your role and experience at Publicis Sapient...</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Modal for Cognizant -->
+          <div class="modal fade" id="modalCognizant" tabindex="-1" role="dialog" aria-labelledby="modalCognizantLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="modalCognizantLabel">Cognizant</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Details about your role and experience at Cognizant...</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Modal for Hewlett Packard -->
+          <div class="modal fade" id="modalHP" tabindex="-1" role="dialog" aria-labelledby="modalHPLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="modalHPLabel">Hewlett Packard</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Details about your role and experience at Hewlett Packard...</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                <!-- Repeat for more projects -->
             </div>
         </div>
-
-        <!-- Repeat similar structure for other sections -->
-        <!-- Experience Section -->
-        <div class="card">
-            <div class="card-header" id="headingExperience">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseExperience" aria-expanded="false" aria-controls="collapseExperience">
-                        Experience
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseExperience" class="collapse" aria-labelledby="headingExperience" data-parent="#cvAccordion">
-                <div class="card-body">
-                    <!-- Content for experience section here -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Education Section -->
-        <div class="card">
-            <div class="card-header" id="headingEducation">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEducation" aria-expanded="false" aria-controls="collapseEducation">
-                        Education
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseEducation" class="collapse" aria-labelledby="headingEducation" data-parent="#cvAccordion">
-                <div class="card-body">
-                    <ul>
-                        <li>Masters in Data Science, Birkbeck University, London, 2020</li>
-                        <li>Management Acceleration Programme, Oxford Saïd Business School, 2012</li>
-                        <li>Bachelor of Commerce: Business Studies, 2003</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certifications Section -->
-        <div class="card">
-            <div class="card-header" id="headingCertifications">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseCertifications" aria-expanded="false" aria-controls="collapseCertifications">
-                        Certifications
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseCertifications" class="collapse" aria-labelledby="headingCertifications" data-parent="#cvAccordion">
-                <div class="card-body">
-                    <ul>
-                        <li>Lean Six Sigma Master Black Belt</li>
-                        <li>Prince2 Practitioner</li>
-                        <li>ISO 9001:2000</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Contact Information Section -->
-    </div>
-</section>
-
-<section id="projects" class="container mt-5">
-    <h2 class="mb-4">Projects</h2>
-    <div class="projects-wrapper">
-        <div class="project-tile">
-            <div class="card">
-                <img src="project1.jpg" class="card-img-top" alt="Project 1">
-                <div class="card-body">
-                    <h5 class="card-title">Bubble Chart</h5>
-                    <p class="card-text">Hiring Trends</p>
-                </div>
-            </div>
-        </div>
-        <div class="project-tile">
-            <div class="card">
-                <img src="images/Linear Dendogram - Sentiment.jpeg" class="card-img-top" alt="Sentiment Analysis">
-                <div class="card-body">
-                    <h5 class="card-title">Sentiment Analysis</h5>
-                    <p class="card-text">Sentiment Analysis on Helpdesk Ticket Feedback using NLP and Seaborn Charts</p>
-                </div>
-            </div>
-        </div>
-        <div class="project-tile">
-            <div class="card">
-                <img src="project3.jpg" class="card-img-top" alt="Project 3">
-                <div class="card-body">
-                    <h5 class="card-title">Value Stream Mapping</h5>
-                    <p class="card-text">Brief description of Project 3.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Add more project tiles as needed -->
-    </div>
-</section>
-
-    
-    <section id="contact">
-        <h2>Contact</h2>
-            <p>Hariharan Ramamoorthy<br>
-                <a href="mailto:hariharan.ramamoorthy@gmail.com">hariharan.ramamoorthy@gmail.com</a></p>
-
     </section>
-    
-    <footer>
-        <p>&copy; 2024 My Portfolio</p>
+    <!-- Portfolio Section -->
+
+    <section id="portfolio" class="portfolio-section text-center">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <!-- Tiles for projects -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" data-toggle="modal" data-target="#modalProject1">
+                        <img src="images/Linear Dendogram - Sentiment.jpeg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Sentiment Analysis</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-toggle="modal" data-target="#modalProject2">
+                        <img src="images/projects/project2-small.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Service Now Dashboard</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-toggle="modal" data-target="#modalProject3">
+                        <img src="images/projects/project3-small.jpg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card" data-toggle="modal" data-target="#modalProject4">
+                        <img src="images/projects/project4-small.jpg" class="card-img-top" alt="Project 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 4</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-toggle="modal" data-target="#modalProject5">
+                        <img src="images/projects/project5-small.jpg" class="card-img-top" alt="Project 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 5</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-toggle="modal" data-target="#modalProject6">
+                        <img src="images/projects/project6-small.jpg" class="card-img-top" alt="Project 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 6</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Modal for Project 1 -->
+    <div class="modal fade" id="modalProject1" tabindex="-1" role="dialog" aria-labelledby="modalProject1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProject1Label">Project 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/projects/project1-large.jpg" class="img-fluid" alt="Project 1">
+                    <h5>Background</h5>
+                    <p>Details about the background of Project 1...</p>
+                    <h5>Analysis</h5>
+                    <p>Details about the analysis of Project 1...</p>
+                    <h5>Tools Used</h5>
+                    <p>Details about the tools used in Project 1...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 2 -->
+    <div class="modal fade" id="modalProject2" tabindex="-1" role="dialog" aria-labelledby="modalProject2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProject2Label">Project 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/projects/project2-large.jpg" class="img-fluid" alt="Project 2">
+                    <h5>Background</h5>
+                    <p>Details about the background of Project 2...</p>
+                    <h5>Analysis</h5>
+                    <p>Details about the analysis of Project 2...</p>
+                    <h5>Tools Used</h5>
+                    <p>Details about the tools used in Project 2...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 3 -->
+    <div class="modal fade" id="modalProject3" tabindex="-1" role="dialog" aria-labelledby="modalProject3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProject3Label">Project 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/projects/project3-large.jpg" class="img-fluid" alt="Project 3">
+                    <h5>Background</h5>
+                    <p>Details about the background of Project 3...</p>
+                    <h5>Analysis</h5>
+                    <p>Details about the analysis of Project 3...</p>
+                    <h5>Tools Used</h5>
+                    <p>Details about the tools used in Project 3...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 4 -->
+    <div class="modal fade" id="modalProject4" tabindex="-1" role="dialog" aria-labelledby="modalProject4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProject4Label">Project 4</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/projects/project4-large.jpg" class="img-fluid" alt="Project 4">
+                    <h5>Background</h5>
+                    <p>Details about the background of Project 4...</p>
+                    <h5>Analysis</h5>
+                    <p>Details about the analysis of Project 4...</p>
+                    <h5>Tools Used</h5>
+                    <p>Details about the tools used in Project 4...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 5 -->
+    <div class="modal fade" id="modalProject5" tabindex="-1" role="dialog" aria-labelledby="modalProject5Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProject5Label">Project 5</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/projects/project5-large.jpg" class="img-fluid" alt="Project 5">
+                    <h5>Background</h5>
+                    <p>Details about the background of Project 5...</p>
+                    <h5>Analysis</h5>
+                    <p>Details about the analysis of Project 5...</p>
+                    <h5>Tools Used</h5>
+                    <p>Details about the tools used in Project 5...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Project 6 -->
+    <div class="modal fade" id="modalProject6" tabindex="-1" role="dialog" aria-labelledby="modalProject6Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProject6Label">Project 6</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/projects/project6-large.jpg" class="img-fluid" alt="Project 6">
+                    <h5>Background</h5>
+                    <p>Details about the background of Project 6...</p>
+                    <h5>Analysis</h5>
+                    <p>Details about the analysis of Project 6...</p>
+                    <h5>Tools Used</h5>
+                    <p>Details about the tools used in Project 6...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section text-center">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/Education/Birkbeck.jpg" class="card-img-top" alt="Education 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Masters in Data Science</h5>
+                            <p class="card-text">2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/Education/said white.jpg" class="card-img-top" alt="Education 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Management Programme</h5>
+                            <p class="card-text">2012</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/Education/Madras_University_Seal.svg.png" class="card-img-top" alt="Education 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Bachelor of Commerce</h5>
+                            <p class="card-text">2003</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section text-center">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/certification/Prince2.png" class="card-img-top" alt="Certification 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Prince 2 Practitioner</h5>
+                            <p class="card-text">2015</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/certification/6sigma.png" class="card-img-top" alt="Certification 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Lean Six Sigma Black Belt</h5>
+                            <p class="card-text">2006</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/certification/iso.jpg" class="card-img-top" alt="Certification 3">
+                        <div class="card-body">
+                            <h5 class="card-title">ISO 9001:2000</h5>
+                            <p class="card-text">2006</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section text-center">
+        <div class="container">
+            <h2>Blog</h2>
+            <p>Check out my latest posts!</p>
+            <a href="blog.html" class="btn btn-primary">Go to Blog</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>Contact information here...</p>
+            <p>Social media links here...</p>
+            <form onsubmit="sendMail(); return false;">
+                <div class="form-group">
+                    <label for="contactFormEmail">Email address</label>
+                    <input type="email" class="form-control" id="contactFormEmail" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactFormMessage">Message</label>
+                    <textarea class="form-control" id="contactFormMessage" rows="3" required></textarea>
+                </div>
+                <button type="submit" class=" -primary">Submit</button>
+            </form>
+        </div>
     </footer>
-    
-    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

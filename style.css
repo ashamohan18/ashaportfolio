@@ -1,16 +1,12 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
-
-header {
-    background: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -26,179 +22,174 @@ nav ul li a {
     text-decoration: none;
 }
 
-section {
-    padding: 2rem;
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    font-weight: 600;
+}
+
+p {
+    color: #555555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Header styles */
+header {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
     text-align: center;
+    border-bottom: 1px solid #e9ecef;
 }
 
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
-section {
-    padding: 2rem;
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-section h3, section h4 {
-    margin-top: 1.5rem;
-    color: #333;
-}
-
-section ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-section ul li {
+header h1 {
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
-footer {
-    position: static;
-}
-
-@media (max-width: 600px) {
-    section {
-        padding: 1rem;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 1rem 0;
-    }
-}
-.accordion {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.accordion-item {
-    border-bottom: 1px solid #ddd;
-}
-
-.accordion-button {
-    background: #f5f5f5;
-    color: #333;
-    cursor: pointer;
-    padding: 1rem;
-    text-align: left;
-    width: 100%;
-    border: none;
-    outline: none;
-    transition: background 0.2s ease-in-out;
+header p {
     font-size: 1.2rem;
+    margin-bottom: 0;
 }
 
-.accordion-button:hover {
-    background: #eaeaea;
+/* Navbar styles */
+.navbar {
+    background-color: #000000;
+    border-bottom: 1px solid #e9ecef;
 }
 
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
-    padding: 0 1rem;
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
 }
 
-.accordion-content ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
 }
 
-.accordion-content ul li {
-    margin-bottom: 0.5rem;
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #007bff;
 }
 
-.accordion-content p {
-    margin: 1rem 0;
-}
-
-.accordion-item.active .accordion-content {
-    max-height: 1000px; /* Adjust as needed to fit content */
-    padding: 1rem;
-}
-
-.accordion-item.active .accordion-button {
-    background: #ddd;
-}
-
+/* Accordion styles */
 .accordion .card-header {
     background-color: #f8f9fa;
     border-bottom: 1px solid #e9ecef;
 }
 
 .accordion .btn-link {
-    text-decoration: none;
-    font-size: 1.2rem;
     color: #007bff;
-    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .accordion .btn-link:hover {
-    text-decoration: none;
     color: #0056b3;
 }
 
 .accordion .card-body {
-    padding: 1rem 1.25rem;
+    background-color: #f8f9fa;
+    color: #333333;
 }
 
 .accordion .card {
+    background-color: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+/* Section styles */
+.section {
     padding: 2rem 0;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
+.section h2 {
+    margin-bottom: 1.5rem;
 }
 
-p {
-    font-size: 1rem;
-    color: #666;
-}
-.projects-wrapper {
+/* Projects, work experience, and education section styles */
+.projects-wrapper, .work-wrapper, .education-wrapper {
     display: flex;
     overflow-x: auto;
     gap: 1rem;
     padding: 1rem 0;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #007bff #f8f9fa; /* For Firefox */
 }
 
-.project-tile {
-    min-width: 300px;
+.projects-wrapper::-webkit-scrollbar, .work-wrapper::-webkit-scrollbar, .education-wrapper::-webkit-scrollbar {
+    height: 10px; /* For Chrome, Safari, and Opera */
+}
+
+.projects-wrapper::-webkit-scrollbar-thumb, .work-wrapper::-webkit-scrollbar-thumb, .education-wrapper::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* For Chrome, Safari, and Opera */
+    border-radius: 10px; /* For Chrome, Safari, and Opera */
+}
+
+.projects-wrapper::-webkit-scrollbar-track, .work-wrapper::-webkit-scrollbar-track, .education-wrapper::-webkit-scrollbar-track {
+    background: #f8f9fa; /* For Chrome, Safari, and Opera */
+}
+
+.project-tile, .work-tile, .education-tile {
+    width: 300px; /* Fixed width for tiles */
     flex: 0 0 auto;
 }
 
-.project-tile .card {
+.project-tile .card, .work-tile .card, .education-tile .card {
+    height: 300px; /* Fixed height for tiles */
+    background-color: #ffffff;
     border: 1px solid #e9ecef;
     border-radius: 0.25rem;
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
 }
 
-.project-tile .card:hover {
+.project-tile .card:hover, .work-tile .card:hover, .education-tile .card:hover {
     transform: scale(1.05);
 }
 
-.project-tile img {
+.project-tile img, .work-tile img, .education-tile img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+.project-tile .card-title, .work-tile .card-title, .education-tile .card-title {
+    color: #007bff;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.project-tile .card-text, .work-tile .card-text, .education-tile .card-text {
+    color: #555555;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f8f9fa;
+    color: #555555;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
 }
